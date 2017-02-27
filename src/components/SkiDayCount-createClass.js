@@ -6,14 +6,13 @@ import Calendar from 'react-icons/lib/fa/calendar'
 
 export const SkiDayCount = createClass({
   propTypes: {
-    total: PropTypes.number,
+    total: PropTypes.number.isRequired,
     powder: PropTypes.number,
     backcountry: PropTypes.number,
     goal: PropTypes.number
   },
   getDefaultProps() {
     return {
-      total: 50,
       powder: 50,
       backcountry: 15,
       goal: 100
