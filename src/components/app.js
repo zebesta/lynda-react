@@ -38,7 +38,7 @@ export class App extends Component{
           resort: "Breckenridge",
           date: new Date("3/20/2016"),
           powder: true,
-          backcountry: false
+          backcountry: true
         }
       ]
     }
@@ -46,7 +46,7 @@ export class App extends Component{
 
   countDays(filter) {
     const { allSkiDays } = this.state
-    return allSkiDays.filter((day)=>{return (filter) ? day[filter] : day}).length
+    return allSkiDays.filter((day)=> (filter) ? day[filter] : day).length
   }
 
   render(){
@@ -59,7 +59,8 @@ export class App extends Component{
                         backcountry={this.countDays("backcountry")}/> :
           (this.props.location.pathname === '/add-day') ?
           <AddDayForm></AddDayForm> :
-          <SkiDayList days={this.state.allSkiDays}/>
+          <SkiDayList days={this.state.allSkiDays}
+                      filter={this.props.params.filter}/>
 
 
                   }
