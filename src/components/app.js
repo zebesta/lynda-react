@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import { SkiDayList } from './skidaylist'
-import { SkiDayCount } from './skidaycount'
+import { SkiDayList } from './SkiDayList'
+import { SkiDayCount } from './SkiDayCount'
 
 export class App extends Component{
 
