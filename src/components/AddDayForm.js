@@ -1,21 +1,29 @@
-import { PropTypes, Component } from 'react'
+import { PropTypes } from 'react'
 
 
 //stateless
 export const AddDayForm = ({resort,
                             date,
                             powder,
-                            backcountry }) => {
+                            backcountry,
+                            onNewDay}) => {
 
   // scoped stateless variables that are definied by callback refs
   let _resort, _date, _powder, _backcountry;
 
   const submit = (e) => {
     e.preventDefault()
-    console.log(resort, _resort.value)
-    console.log(date, _date.value)
-    console.log(powder, _powder.checked)
-    console.log(backcountry, _backcountry.checked)
+    onNewDay({
+      resort: _resort.value,
+      date: _date.value,
+      powder: _powder.checked,
+      backcountry: _backcountry.checked
+    })
+    _resort.value = '';
+    _date.value = '';
+    _powder.checked = false;
+    _backcountry.checked = false;
+
   }
 
   return (
